@@ -1,0 +1,32 @@
+
+DROP DATABASE IF EXISTS library;
+CREATE DATABASE library;
+USE library;
+
+CREATE TABLE writer(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    author VARCHAR(50) NOT NULL,
+    country VARCHAR(50)
+);
+
+CREATE TABLE books(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    ISBN VARCHAR(20) UNIQUE,
+    genre VARCHAR(20),
+    rating VARCHAR(50),
+    FOREIGN KEY (author) REFERENCES writer(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE comics(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    ISBN VARCHAR(20) UNIQUE,
+    genre VARCHAR(20),
+    rating VARCHAR(50),
+    FOREIGN KEY (author) REFERENCES writer(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
