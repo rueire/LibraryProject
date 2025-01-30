@@ -1,7 +1,6 @@
 
-DROP DATABASE IF EXISTS library;
-CREATE DATABASE library;
-USE library;
+CREATE TABLE IF NOT EXISTS library_db
+USE library_db;
 
 CREATE TABLE writer(
     id INT AUTO_INCREMENT PRIMARY KEY,
