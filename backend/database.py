@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
-# Get database credentials from environment variables
+# Get database credentials
 DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
@@ -24,7 +24,7 @@ try:
         database=DB_NAME
     ) 
     print('Connection to library successful')
-    
+
 except sqlite3.Error as e:
-    print('Error connecting to library database')
+    print(f'Error connecting to library database: {e}')
 
