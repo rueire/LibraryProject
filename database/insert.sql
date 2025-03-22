@@ -14,7 +14,7 @@ Rating planned to be e.g. YA = young adult, MA = Mature... this not set in stone
 
 INSERT INTO author(writer, country) VALUES
 ();
-INSERT INTO books(title, ISBN, genre, rating) VALUES
+INSERT INTO book(title, ISBN, genre, rating) VALUES
 ();
-INSERT INTO comics(title, ISBN, genre, rating) VALUES
+INSERT INTO comic(title, ISBN, genre, rating) VALUES
 ();
