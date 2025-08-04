@@ -12,9 +12,9 @@ Genre to be fantasy, historical, nonfiction... etc
 Rating planned to be e.g. YA = young adult, MA = Mature... this not set in stone.
 */
 
-INSERT INTO author(writer, country) VALUES
-();
-INSERT INTO book(title, ISBN, genre, rating) VALUES
-();
+INSERT INTO author(name) VALUES();
+
+INSERT INTO book(title, ISBN, language, author_id) VALUES();
+
 INSERT INTO comic(title, ISBN, genre, rating) VALUES
 ();
