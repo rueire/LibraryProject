@@ -13,15 +13,14 @@ function here
 
 
 def add_book():
-    query = "CREATE TABLE IF NOT EXISTS book(id INTEGER PRIMARY KEY, "
-    "title VARCHART NOT NULL, isbn VARCHART NOT NULL, genre VARCHART, rating VARCHART"
+    query = "INSERT book(id INTEGER PRIMARY KEY, "
+    "title VARCHART NOT NULL, isbn VARCHART NOT NULL, language VARCHART)"
 
 
 def add_author():
-    query = "CREATE TABLE IF NOT EXISTS author(id INTEGER PRIMARY KEY, "
-    "writer VARCHART NOT NULL"
+    query = "INSERT author(name) VARCHART NOT NULL"
 
 
-def add_comic():
-    query = "CREATE TABLE IF NOT EXISTS book(id INTEGER PRIMARY KEY, "
-    "title VARCHART NOT NULL, isbn VARCHART NOT NULL, genre VARCHART, rating VARCHART"
+# def add_comic():
+#     query = "CREATE TABLE IF NOT EXISTS book(id INTEGER PRIMARY KEY, "
+#     "title VARCHART NOT NULL, isbn VARCHART NOT NULL, genre VARCHART, rating VARCHART)"
