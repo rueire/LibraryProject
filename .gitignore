@@ -1,1 +1,5 @@
+# safety stuff
 .env
+
+# VSCode workspace -tiedostot
+*.code-workspace
