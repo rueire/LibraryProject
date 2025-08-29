@@ -14,13 +14,24 @@ CREATE TABLE author(
 CREATE TABLE book(
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
+    series_id INT,
+    FOREIGN KEY (series_id) REFERENCES series(id)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE,
     ISBN VARCHAR(20) UNIQUE,
     language VARCHAR(50) not null,
     author_id INT,
     FOREIGN KEY (author_id) REFERENCES author(id)
         ON DELETE RESTRICT
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE,
+    release_year INT NOT NULL
 );
+
+CREATE TABLE series (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
 /*These to be added later when vision is more clear*/
 
 
