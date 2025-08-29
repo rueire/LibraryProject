@@ -3,3 +3,9 @@
 
 # VSCode workspace -tiedostot
 *.code-workspace
+
+#Python enviroment
+library_venv
+
+#Personal notes
+DO_NOT_COMMIT.txt
