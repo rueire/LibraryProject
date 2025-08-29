@@ -1,8 +1,24 @@
+# Install to use
 # pip install pymysql
 # pip install python-dotenv
-# Not yet installed!
+# pip install sqlalchemy
 
-import sqlite3
+"""
+Connection made!
+remember to add pword in env before testing!
+
+1) Figure out way to recognize database (mysql, mariadb, sqlite..)
+and connect accordingly
+
+2) How to create queries
+
+3) Start Frontend
+"""
+
+from sqlalchemy import create_engine, text
+from sqlalchemy.exc import SQLAlchemyError
+#import pymysql
+
 # for .env:
 import os 
 from dotenv import load_dotenv
@@ -16,15 +32,17 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_NAME = os.getenv("DB_NAME")
 
 try:
-    #connection = sqlite3.connect('library_db')
-    connection = pymysql.connect(
-        host=DB_HOST,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        database=DB_NAME
-    ) 
-    print('Connection to library successful')
+    engine = create_engine(
+        f"mysql+mysqldb://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}",
+        echo=False #True shows sql queries
+        )
+    with engine.connect() as conn:
+        result = conn.execute(text('SELECT 1'))
+        print('Connection to MariaDB successful')
+        print(f'Test query result: {result.fetchone()}')
+        # fetchone gets only 1 row, fetchall gets everything
 
-except sqlite3.Error as e:
-    print(f'Error connecting to library database: {e}')
-
+except SQLAlchemyError as e:
+    print(f"SQLAlchemy error connecting to MariaDB database: {e}")
+except Exception as e:
+    print(f'Error connecting to database: {e}')
