@@ -5,7 +5,7 @@ Plan to: </br>
 - Backend that uses said database</br>
 - Frontend to create (local for now) app </br>
 
-Work in progress -main thing is to add more books and authors and test quaries work. <br>
+Work in progress -main thing is to add more books and authors and test queries work. <br>
 Planning to add more once everything works, e.g. book genres, release year<br>
 
 Database started:<br>
