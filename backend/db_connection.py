@@ -56,7 +56,9 @@ try:
         ON b.author_id = a.id WHERE 1=1
         """
 
-        params = {} # for frontend
+        # Dictionary for query parameters. 
+        # Values from user input (e.g. language, author, release_year)
+        params = {}
 
         if language:
             query += "AND LOWER(b.language) = LOWER(:language)"
