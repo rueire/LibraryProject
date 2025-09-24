@@ -46,10 +46,11 @@ try:
         # query = not JSON. str is expeced, None is default
         # Add more! now only for testing purposes 
         language:str | None = Query(None),
-        author:str | None = Query(None)
+        author:str | None = Query(None),
+        release_year:int | None = Query(None)
     ):
         query = """
-        SELECT b.title, b.ISBN, b.language, a.name AS author_name 
+        SELECT b.title, b.ISBN, b.language, a.name AS author_name, b.release_year
         FROM book b 
         JOIN author a 
         ON b.author_id = a.id WHERE 1=1
@@ -64,6 +65,9 @@ try:
             # named parameter binding (:author) for sqlalchemy text
             query += "AND LOWER(a.name) = LOWER(:author)"
             params["author"] = author
+        if release_year:
+            query += "AND b.release_year = (:release_year)"
+            params['release_year'] = release_year
 
         with engine.connect() as conn:
             result = conn.execute(text(query), params)
