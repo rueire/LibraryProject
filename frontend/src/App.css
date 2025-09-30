@@ -1,42 +1,66 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/*Not mobile first!
+Still time to change it?*/
+
+body,
+html {
+  /*No scrolling on the site itself.
+  Create scrollable areas when necessary*/
+  background-color: rosybrown;
+  margin: 0;
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*Colors are ugly so that i know what im doing*/
+.menu {
+  background-color: red;
+
+  position: fixed;
+  top: 0vh;
+  margin-left: 0%;
+  width: 18vw;
+  height: 100vh;
+  border-radius: 2vh;
+  padding: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  flex-direction: column;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*everything stays within .menu*/
+.user,
+#user_image,
+#menu_buttons {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  /* prevent child overflow */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+#user_image {
+  background-color: black;
+  color: white;
 }
 
-.card {
-  padding: 2em;
+#user_name {
+  background-color: blueviolet;
+  color: azure;
 }
 
-.read-the-docs {
-  color: #888;
+#menu_buttons {
+  width: 15vw;
+  gap: 50px;
+
+  background-color: rgb(101, 101, 101);
+}
+
+button {
+  width: 100%;
+  background-color: rgb(236, 236, 53);
+  color: brown;
 }
