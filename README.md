@@ -21,8 +21,8 @@ Filtering with language and author tested:<br>
 http://127.0.0.1:8000/books?language=english <br>
 <img width="330" height="371" alt="image" src="https://github.com/user-attachments/assets/09fc879d-06c4-40d1-85f9-44cf3967e5a8" /> 
 
-http://127.0.0.1:8000/books?author=ICE<br>
-<img width="335" height="477" alt="image" src="https://github.com/user-attachments/assets/9b5ae45e-731e-48cf-afed-5df811261f39" />
+Frontend started, now fetches some books<br>
+<img width="1883" height="856" alt="image" src="https://github.com/user-attachments/assets/88ea2097-778a-478b-92b8-86c3bec225ac" />
 
 
 
