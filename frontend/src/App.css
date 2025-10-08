@@ -10,6 +10,8 @@ html {
   overflow: hidden;
 }
 
+/*MENU AND MENU BUTTONS*/
+
 /*Colors are ugly so that i know what im doing*/
 .menu {
   background-color: red;
@@ -18,7 +20,7 @@ html {
   top: 0vh;
   margin-left: 0%;
   width: 18vw;
-  height: 100vh;
+  height: 100%;
   border-radius: 2vh;
   padding: 5px;
 
@@ -29,33 +31,39 @@ html {
   flex-direction: column;
 }
 
-/*everything stays within .menu*/
-.user,
+/*everything stays within .menu
+but messes up proper placement?
+fix later*/
+#user_name,
 #user_image,
 #menu_buttons {
   max-width: 100%;
+  /* max-height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  /* prevent child overflow */
+  /* prevent child overflow*/
 }
 
 #user_image {
   background-color: black;
   color: white;
+  padding: 20%;
+  top: 10px;
 }
+
 
 #user_name {
   background-color: blueviolet;
+  padding: 5px;
   color: azure;
 }
 
 #menu_buttons {
   width: 15vw;
-  gap: 50px;
-
+  gap: 40px;
   background-color: rgb(101, 101, 101);
 }
 
@@ -63,4 +71,38 @@ button {
   width: 100%;
   background-color: rgb(236, 236, 53);
   color: brown;
+}
+
+/*FETCHED BOOKS:*/
+
+/*fetched books wrapped to change placement*/
+.all_books_wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/*fetched books div*/
+.all_books {
+  background-color: aqua;
+  width: 90%;
+  height: 300px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 28vw;
+  padding: 10px;
+  gap: 15px;
+}
+
+/*book card with book info*/
+.book_card {
+  color: black;
+  background-color: rgb(238, 46, 142);
+  flex: 0 0 auto;
+  /* estää kutistumisen */
+  height: 250px;
+  width: 200px;
 }
