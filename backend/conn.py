@@ -18,6 +18,8 @@ and connect accordingly
 from fastapi import FastAPI, Query
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
+from fastapi.middleware.cors import CORSMiddleware
+
 #import pymysql
 
 # for .env:
@@ -34,6 +36,14 @@ DB_NAME = os.getenv("DB_NAME")
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Reactin osoite
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 try:
     engine = create_engine(
         f"mysql+mysqldb://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}",
@@ -49,11 +59,12 @@ try:
         author:str | None = Query(None),
         release_year:int | None = Query(None)
     ):
+        #limit 10, offset 0 = first 10 books
         query = """
         SELECT b.title, b.ISBN, b.language, a.name AS author_name, b.release_year
         FROM book b 
         JOIN author a 
-        ON b.author_id = a.id WHERE 1=1
+        ON b.author_id = a.id WHERE 1=1 LIMIT 10 OFFSET 0;
         """
 
         # Dictionary for query parameters. 
