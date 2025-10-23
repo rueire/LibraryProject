@@ -28,8 +28,10 @@ def get_books_df():
         
 
         query = """
-        SELECT language, release_year, series_id
-        FROM book
+        SELECT b.language, b.release_year, s.name as series_name
+        FROM book b
+        LEFT JOIN series s
+        ON b.series_id = s.id
         WHERE 1=1;
         """
 
