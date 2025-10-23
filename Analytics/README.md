@@ -4,4 +4,11 @@
  ## Short and sweet
 Connection to database done with sqlalchemy, pandas<br>
 Visualization done using matploblib <br><br>
-<img width="1497" height="787" alt="image" src="https://github.com/user-attachments/assets/5083d3e2-7856-4ce4-9043-01e1cbf4cb2e" />
+
+<table>
+  <tr>
+    <td><img width="500" alt="image" src="https://github.com/user-attachments/assets/659b973a-5a25-4078-be0b-f9c3417ed8a4" /></td>
+    <td><img width="500" alt="image" src="https://github.com/user-attachments/assets/0a37261f-144c-43fb-b0b4-efcd80aa8d7c" /></td>
+  </tr>
+</table>
+<img width="800" height="650" alt="image" src="https://github.com/user-attachments/assets/ef1ee19d-aab6-4051-ad87-8f5f89703e8f" />
