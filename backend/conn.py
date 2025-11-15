@@ -64,7 +64,7 @@ try:
         SELECT b.title, b.ISBN, b.language_code, a.name AS author_name, b.release_year
         FROM book b 
         JOIN author a 
-        ON b.author_id = a.id WHERE 1=1 LIMIT 10 OFFSET 0;
+        ON b.author_id = a.id WHERE 1=1
         """
 
         # Dictionary for query parameters. 
@@ -72,15 +72,17 @@ try:
         params = {}
 
         if language_code:
-            query += "AND LOWER(b.language_code) = LOWER(:language_code)"
+            query += " AND LOWER(b.language_code) = LOWER(:language_code)"
             params["language_code"] = language_code
         if author:
             # named parameter binding (:author) for sqlalchemy text
-            query += "AND LOWER(a.name) = LOWER(:author)"
+            query += " AND LOWER(a.name) = LOWER(:author)"
             params["author"] = author
         if release_year:
-            query += "AND b.release_year = (:release_year)"
+            query += " AND b.release_year = (:release_year)"
             params['release_year'] = release_year
+        
+         # Add LIMIT / OFFSET here later?
 
         with engine.connect() as conn:
             result = conn.execute(text(query), params)
