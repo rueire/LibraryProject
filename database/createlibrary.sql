@@ -32,24 +32,21 @@ CREATE TABLE series (
     name VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE genres (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    genre VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE book_genres (
+    book_id INT NOT NULL, 
+    genre_id INT NOT NULL,
+    PRIMARY KEY (book_id, genre_id),
+    FOREIGN KEY (book_id) REFERENCES book(id) ON DELETE CASCADE,
+    FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE
+);
+
+
 /*These to be added later when vision is more clear*/
-
-
--- -- all genres
--- CREATE TABLE genre (
---     id INT AUTO_INCREMENT PRIMARY KEY,
---     name VARCHAR(50) UNIQUE NOT NULL
--- );
--- --link books to genres
--- CREATE TABLE book_genre (
---     book_id INT,
---     genre_id INT,
---     PRIMARY KEY (book_id, genre_id),
---     FOREIGN KEY (book_id) REFERENCES book(id)
---         ON DELETE CASCADE,
---     FOREIGN KEY (genre_id) REFERENCES genre(id)
---         ON DELETE CASCADE
--- );
 
 -- CREATE TABLE comic(
 --     id INT AUTO_INCREMENT PRIMARY KEY,

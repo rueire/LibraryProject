@@ -11,6 +11,10 @@ INSERT INTO series(name) VALUES();
 
 INSERT INTO book(title, series_id, ISBN, 'language', author_id, release_year) VALUES();
 
+INSERT INTO genres(genre) VALUES();
+
+INSERT INTO book_genres(book_id, genre_id) VALUES();
+
 -- INSERT INTO comic(title, ISBN, genre, rating) VALUES
 -- ();
 
@@ -71,3 +75,39 @@ INSERT INTO book(title, series_id, ISBN, language, author_id, release_year)
 VALUES('A Dawn with the Wolf Knight', 4, 9781398713666, 'English', 4, 2024);
 INSERT INTO book(title, series_id, ISBN, language, author_id, release_year) 
 VALUES('A Duet with the Siren Duke', 4, 9781398713635, 'English', 4, 2023);
+
+INSERT INTO genres(genre) VALUES('Young Adult');
+INSERT INTO genres(genre) VALUES('Fantasy');
+INSERT INTO genres(genre) VALUES('Horror');
+INSERT INTO genres(genre) VALUES('Romance');
+INSERT INTO genres(genre) VALUES('LGTB');
+INSERT INTO genres(genre) VALUES('Historical');
+INSERT INTO genres(genre) VALUES('Self Help');
+INSERT INTO genres(genre) VALUES('Mystery');
+INSERT INTO genres(genre) VALUES('Adult Fiction');
+INSERT INTO genres(genre) VALUES('Comedy');
+INSERT INTO genres(genre) VALUES('Scifi');
+INSERT INTO genres(genre) VALUES('Children');
+INSERT INTO genres(genre) VALUES('Non-Fiction');
+INSERT INTO genres(genre) VALUES('Thriller');
+INSERT INTO genres(genre) VALUES('Adventure');
+INSERT INTO genres(genre) VALUES('Mythology');
+
+
+INSERT INTO book_genres(book_id, genre_id) VALUES(1, 2);
+INSERT INTO book_genres(book_id, genre_id) VALUES(1, 16)
+
+INSERT INTO book_genres(book_id, genre_id) VALUES(2, 2);
+INSERT INTO book_genres(book_id, genre_id) VALUES(2, 15);
+INSERT INTO book_genres(book_id, genre_id) VALUES(2, 16);
+
+INSERT INTO book_genres(book_id, genre_id) VALUES(3, 2);
+INSERT INTO book_genres(book_id, genre_id) VALUES(3,16);
+
+INSERT INTO book_genres(book_id, genre_id) VALUES(4, 2);
+INSERT INTO book_genres(book_id, genre_id) VALUES(4, 15);
+INSERT INTO book_genres(book_id, genre_id) VALUES(4, 16);
+
+INSERT INTO book_genres(book_id, genre_id) VALUES(5, 2) ;
+INSERT INTO book_genres(book_id, genre_id) VALUES(5, 15); 
+INSERT INTO book_genres(book_id, genre_id) VALUES(5, 16);
