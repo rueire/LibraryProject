@@ -55,25 +55,25 @@ try:
         #testing for search function
         # query = not JSON. str is expeced, None is default
         # Add more! now only for testing purposes 
-        language:str | None = Query(None),
+        language_code:str | None = Query(None),
         author:str | None = Query(None),
         release_year:int | None = Query(None)
     ):
         #limit 10, offset 0 = first 10 books
         query = """
-        SELECT b.title, b.ISBN, b.language, a.name AS author_name, b.release_year
+        SELECT b.title, b.ISBN, b.language_code, a.name AS author_name, b.release_year
         FROM book b 
         JOIN author a 
         ON b.author_id = a.id WHERE 1=1 LIMIT 10 OFFSET 0;
         """
 
         # Dictionary for query parameters. 
-        # Values from user input (e.g. language, author, release_year)
+        # Values from user input (e.g. language_code, author, release_year)
         params = {}
 
-        if language:
-            query += "AND LOWER(b.language) = LOWER(:language)"
-            params["language"] = language
+        if language_code:
+            query += "AND LOWER(b.language_code) = LOWER(:language_code)"
+            params["language_code"] = language_code
         if author:
             # named parameter binding (:author) for sqlalchemy text
             query += "AND LOWER(a.name) = LOWER(:author)"
