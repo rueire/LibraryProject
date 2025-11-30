@@ -1,6 +1,9 @@
 # safety stuff
 .env
 
+#assets, maybe rmove later
+assets/
+
 # VSCode workspace -tiedostot
 *.code-workspace
 
