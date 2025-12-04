@@ -45,6 +45,14 @@ CREATE TABLE book_genres (
     FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE
 );
 
+/*==================================*/
+
+ALTER TABLE book
+ADD subtitle varchar(255)
+AFTER title;
+
+/*==================================*/
+
 
 /*These to be added later when vision is more clear*/
 
