@@ -55,14 +55,16 @@ try:
         # Add more! now only for testing purposes 
         language_code:str | None = Query(None),
         author:str | None = Query(None),
-        release_year:int | None = Query(None)
+        release_year:int | None = Query(None),
+        genre:str| None=Query(None)
     ):
-        #limit 10, offset 0 = first 10 books
         query = """
-        SELECT b.title, b.ISBN, b.language_code, a.name AS author_name, b.release_year
+        SELECT b.title, b.ISBN, b.language_code, a.name AS author_name, b.release_year, GROUP_CONCAT(DISTINCT g.genre ORDER BY g.genre SEPARATOR ', ') AS genres
         FROM book b 
-        JOIN author a 
-        ON b.author_id = a.id WHERE 1=1
+        INNER JOIN author a ON b.author_id = a.id 
+        INNER JOIN book_genres bg ON bg.book_id = b.id
+        INNER JOIN genres g ON g.id = bg.genre_id
+        GROUP BY b.id
         """
 
         # Dictionary for query parameters. 
