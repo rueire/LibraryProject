@@ -7,7 +7,7 @@ BEGIN
         b.title,
         a.name AS author,
         b.isbn,
-        b.language,
+        b.language_code,
         s.name AS series,
         b.release_year
     FROM book b
@@ -15,3 +15,17 @@ BEGIN
     LEFT JOIN series s ON s.id = b.series_id;
 END //
 DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE get_bookgenres()
+BEGIN
+
+select b.id, b.title, group_concat(g.genre separator ', ') as genres from book b
+inner join book_genres bg on bg.book_id = b.id
+inner join genres g on g.id = bg.genre_id
+group by b.id;
+
+END //
+DELIMITER ;
+
