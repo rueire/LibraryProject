@@ -26,8 +26,11 @@ Filtering with language and author tested:<br>
 http://localhost:8000/books?language_code=en <br>
 <img width="357" height="442" alt="image" src="https://github.com/user-attachments/assets/1ab957b2-b904-41d4-bb03-0ef7104825de" />
 
-Frontend started, now fetches some books<br>
-<img width="1883" height="856" alt="image" src="https://github.com/user-attachments/assets/88ea2097-778a-478b-92b8-86c3bec225ac" />
+Frontend started, now fetches books from database<br>
+Mobile first, though pc is the main view.<br>
+<img width="200" height="500" alt="image" src="https://github.com/user-attachments/assets/09ad380d-ede8-4725-abf6-7db7e6f31a1b" /> <img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/cf9b134f-2134-43b5-b996-58627dae745b" />
+
+
 
 
 
