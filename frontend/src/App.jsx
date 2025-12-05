@@ -1,24 +1,17 @@
 import './App.css'
-import './components/books.jsx'
-import FetchBooks from './components/books.jsx'
+import './components/Books.jsx'
+import { BrowserRouter } from 'react-router'
+import { AppRoutes } from './components/router.jsx'
+import Menu from './components/Menu.jsx'
 
 function App() {
 
   return (
-    <>
-      <div className='menu'>
-        <div className='user'>
-          <div id='user_image'>image here</div>
-          <div id='user_name'>user's name</div>
-        </div>
-        <div id='menu_buttons'>
-          <button>your books</button>
-          <button>your faves</button>
-          <button>Settings</button>
-        </div>
-      </div>
-      <div className='all_books_wrap'><FetchBooks/></div>
-    </>
+
+    <BrowserRouter>
+      <Menu />
+      <AppRoutes />
+    </BrowserRouter>
   )
 }
 
