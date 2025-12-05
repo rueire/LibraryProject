@@ -2,7 +2,7 @@ import './App.css'
 import './components/Books.jsx'
 import { BrowserRouter } from 'react-router'
 import { AppRoutes } from './components/router.jsx'
-import Menu from './components/Menu.jsx'
+import Menu from './components/menu.jsx'
 
 function App() {
 
