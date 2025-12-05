@@ -31,6 +31,12 @@ html {
   flex-direction: column;
 }
 
+.home-logo {
+  width: 20vw;
+  background-color: black;
+  color: white;
+}
+
 /*everything stays within .menu
 but messes up proper placement?
 fix later*/
