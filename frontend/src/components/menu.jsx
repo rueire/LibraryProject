@@ -7,13 +7,15 @@ export default function Menu() {
             <div className="home-logo">
                 <NavLink to='/'>Logo here</NavLink>
             </div>
-            {/* <div className='user'></div>
-                <div id='user_image'>image here</div>
-                <div id='user_name'>user's name</div>
-            */}
-            <div id='menu_buttons'>
+        {/* <div className='user'></div>
+            <div id='user_image'>image here</div>
+            <div id='user_name'>user's name</div>
+        */}
+        <div className="user-btn">
                 <NavLink to='/user'>User</NavLink>
-                {/* <button>your faves</button> */}
+            </div>
+            <div className="faves-btn">faves</div>
+            <div className="settings-btn">
                 <NavLink to='/settings'>Settings</NavLink>
             </div>
         </div>
