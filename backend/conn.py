@@ -1,8 +1,3 @@
-# Install to use
-# pip install pymysql
-# pip install python-dotenv
-# pip install sqlalchemy
-# pip fastapi uvicorn
 
 """
 Connection made!
@@ -18,7 +13,7 @@ and connect accordingly
 from fastapi import FastAPI, Query
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
-from fastapi.middleware.cors import CORSMiddleware
+# from fastapi.middleware.cors import CORSMiddleware
 
 # for .env:
 import os 
@@ -49,7 +44,7 @@ try:
         )
 #======================================
     @app.get('/genres')
-    def get_books(
+    def get_genres(
         genre:str| None=Query(None)
     ):
         
@@ -72,6 +67,7 @@ try:
         language_code:str | None = Query(None),
         author:str | None = Query(None),
         release_year:int | None = Query(None),
+        genre:str | None=Query(None)
     ):
         query = """
         SELECT b.title, b.ISBN, b.language_code, a.name AS author_name, b.release_year, GROUP_CONCAT(DISTINCT g.genre ORDER BY g.genre SEPARATOR ', ') AS genres
@@ -79,7 +75,7 @@ try:
         INNER JOIN author a ON b.author_id = a.id 
         INNER JOIN book_genres bg ON bg.book_id = b.id
         INNER JOIN genres g ON g.id = bg.genre_id
-        GROUP BY b.id
+        WHERE 1=1
         """
 
         # Dictionary for query parameters. 
@@ -96,6 +92,11 @@ try:
         if release_year:
             query += " AND b.release_year = (:release_year)"
             params['release_year'] = release_year
+        if genre:
+            query += " AND g.genre = (:genre)"
+            params['genre'] = genre
+
+        query += " GROUP BY b.id"
 
         with engine.connect() as conn:
             result = conn.execute(text(query), params)
