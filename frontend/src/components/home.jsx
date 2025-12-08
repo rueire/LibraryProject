@@ -1,13 +1,10 @@
-import FilterBooks from "./filteredBooks"
-import FetchBooks from "./useFetchBooks"
+import MainPage from "./mainPage"
 
 export default function Home() {
 
     return(
         <div className='all_books_wrap'>
-            <FilterBooks/>
-            <FilterBooks/>
-            <FilterBooks />
+            <MainPage/>
         </div>
         
     )
