@@ -18,7 +18,7 @@ export default function MainPage() {
             const idx = Math.floor(Math.random() * genres.length)
             setRandomGenre(genres[idx].genre)
         }
-    },[genres]);
+    }, [genres, randomGenre]);
 
     // filter through books, split genres by comma, trim
     const filteredBooks = books.filter(book =>{
