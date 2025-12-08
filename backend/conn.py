@@ -47,7 +47,23 @@ try:
         f"mysql+mysqldb://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}",
         echo=False #True shows sql queries
         )
-    
+#======================================
+    @app.get('/genres')
+    def get_books(
+        genre:str| None=Query(None)
+    ):
+        
+        query = """
+        SELECT genre
+        FROM genres
+        GROUP BY id
+        """
+        with engine.connect() as conn:
+            result = conn.execute(text(query))
+            genres = [dict(row._mapping) for row in result]
+
+        return {"genres": genres}
+#=================================================
     @app.get('/books')
     def get_books(
         #testing for search function
@@ -56,7 +72,6 @@ try:
         language_code:str | None = Query(None),
         author:str | None = Query(None),
         release_year:int | None = Query(None),
-        genre:str| None=Query(None)
     ):
         query = """
         SELECT b.title, b.ISBN, b.language_code, a.name AS author_name, b.release_year, GROUP_CONCAT(DISTINCT g.genre ORDER BY g.genre SEPARATOR ', ') AS genres
@@ -81,15 +96,13 @@ try:
         if release_year:
             query += " AND b.release_year = (:release_year)"
             params['release_year'] = release_year
-        
-         # Add LIMIT / OFFSET here later?
 
         with engine.connect() as conn:
             result = conn.execute(text(query), params)
             books = [dict(row._mapping) for row in result]
 
         return {"books": books}
-        
+#================================================
 
 except SQLAlchemyError as e:
     print(f"SQLAlchemy error connecting to MariaDB database: {e}")
