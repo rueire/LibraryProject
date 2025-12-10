@@ -16,7 +16,7 @@ Uvicorn<br>
 python-dotenv<br>
 
 Backend requirements can be found at backend/requirements.txt <br>
-in backend/conn.py download requirements with: pip install -r requirements.txt <br>
+in backend/ download requirements with: pip install -r requirements.txt <br>
 
 database updated: <br>
 <img width="1008" height="442" alt="image" src="https://github.com/user-attachments/assets/f5721d1e-d560-485c-bf27-853ec80d84bd" />
