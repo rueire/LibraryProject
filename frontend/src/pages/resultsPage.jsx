@@ -10,7 +10,7 @@ export default function ResultsPage() {
             <div>
                 <label>{value}</label>
             </div>
-            <div className="results-area">
+            <div>
                 <FilterBooks genre={value}/>
             </div>
         </div>
