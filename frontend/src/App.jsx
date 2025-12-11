@@ -1,4 +1,6 @@
-import './App.css'
+import './CSS/App.css'
+import './CSS/menu.css'
+import './CSS/searchbar.css'
 import { BrowserRouter } from 'react-router'
 import { AppRoutes } from './components/router.jsx'
 import Menu from './components/menu.jsx'
@@ -12,7 +14,9 @@ function App() {
       <Menu />
       <div className='info-area'>
         <Searchbar />
-        <AppRoutes />
+        <div className='page-content'>
+          <AppRoutes />
+        </div>
       </div>
     </BrowserRouter>
   )
