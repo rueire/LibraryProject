@@ -12,7 +12,9 @@ function App() {
       <Menu />
       <div className='info-area'>
         <Searchbar />
-        <AppRoutes />
+        <div className='page-content'>
+          <AppRoutes />
+        </div>
       </div>
     </BrowserRouter>
   )
