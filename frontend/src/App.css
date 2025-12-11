@@ -130,6 +130,30 @@ html {
   padding: 0;
 }
 
+.info-area {
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*to separate searchbar from books*/
+.page-content {
+  margin: 0 auto;
+}
+
+.resultspage-wrap {
+  max-width: 80vw;
+}
+
+.results-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80vw;
+}
+
 /*fetched books wrapped to change placement*/
 .all_books_wrap {
   background-color: blueviolet;
@@ -222,13 +246,26 @@ html {
   }
 
   .info-area {
-    max-width: 80vw;
-    margin-left: 10vw;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    max-width: 80vw;
+    margin-left: 10vw;
+  }
+
+  .page-content {
+    max-width: 80vw;
+  }
+
+  .resultspage-wrap {
+    margin-left: 10vw;
+    max-width: 80vw;
+  }
+
+  .results-area {
+    max-width: 70vw;
   }
 
   .all_books_wrap {
@@ -257,5 +294,9 @@ html {
     width: 60vw;
     margin-left: 300px;
     margin-right: 200px;
+  }
+
+  .info-area {
+    margin-left: 5vw;
   }
 }
