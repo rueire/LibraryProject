@@ -11,12 +11,12 @@ function App() {
   return (
 
     <BrowserRouter>
-      <Menu />
       <div className='info-area'>
+      <Menu />
+      <div className='search-area'>
         <Searchbar />
-        <div className='page-content'>
+      </div>
           <AppRoutes />
-        </div>
       </div>
     </BrowserRouter>
   )

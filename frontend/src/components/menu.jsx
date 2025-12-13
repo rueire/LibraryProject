@@ -5,14 +5,14 @@ export default function Menu() {
     return(
         <div className='menu'>
             <div className="menu-buttons">
-                <div className="home-logo">
+                <div id="home-logo">
                     <NavLink to='/'>Logo here</NavLink></div>
                 <div className="small-btns">
-                    <div className="user-btn">
+                    <div id="user-btn">
                         <NavLink to='/user'>User</NavLink>
                     </div>
-                    <div className="faves-btn">faves</div>
-                    <div className="settings-btn">
+                    <div id="faves-btn">faves</div>
+                    <div id="settings-btn">
                         <NavLink to='/settings'>Settings</NavLink>
                     </div>
                 </div>

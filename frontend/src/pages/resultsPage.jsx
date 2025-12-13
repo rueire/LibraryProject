@@ -8,9 +8,6 @@ export default function ResultsPage() {
     return (
         <div className="resultspage-wrap">
             <div>
-                <label>{value}</label>
-            </div>
-            <div>
                 <FilterBooks genre={value}/>
             </div>
         </div>
