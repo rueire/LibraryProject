@@ -41,7 +41,7 @@ html {
 }
 
 .results-content {
-  margin-top: 250px;
+  margin-top: 200px;
   max-width: 90vw;
   background-color: salmon;
 }
@@ -52,10 +52,13 @@ html {
   display: block;
   max-width: 90vw;
   min-width: 80vw;
+  padding: 10px;
 
   box-sizing: border-box;
   background-color: aquamarine;
 }
+
+/*===== big screen down =====*/
 
 .book-results-wrap {
   outline: 4px solid red;
@@ -82,8 +85,9 @@ html {
   gap: 20px;
 }
 
+/*===== big screen up =====*/
 /*fetched books wrapped to change placement*/
-.all_books_wrap {
+/* .all_books_wrap {
   background-color: blueviolet;
 
   display: flex;
@@ -92,7 +96,7 @@ html {
   gap: 50px;
   width: 100vw;
   height: auto;
-}
+} */
 
 /*fetched books div*/
 .all_books {
@@ -132,20 +136,38 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* box-sizing: border-box; */
 
     max-width: 80vw;
     margin-left: 150px;
   }
-
-  /* .page-content {
-    max-width: 80vw;
-  } */
 
   .results-content {
     margin-top: 200px;
     max-width: 70vw;
     /* background-color: salmon; */
   }
+
+  .page-content {
+    padding: 15px;
+    /* outline: 4px solid rgb(0, 0, 0); */
+
+    max-width: 70vw;
+    min-width: 60vw;
+  }
+
+  /*width needs to be min-width of page-content
+  otherwise wont be centered*/
+  .all_books {
+    /* outline: 4px solid rgba(38, 255, 0, 0.886); */
+    width: 60vw;
+    box-sizing: border-box;
+  }
+
+  /* .book-carusel {
+    outline: 4px solid red;
+  } */
+
 
   .book-results-wrap {
     /* outline: 4px solid red; */
@@ -155,11 +177,24 @@ html {
   .all_books_wrap {
     margin: 0;
     max-width: 70vw;
-    margin-left: 9vw;
   }
 }
 
 @media only screen and (min-width: 900px) {
+
+  .page-content {
+    padding: 15px;
+    /* outline: 4px solid rgb(0, 0, 0); */
+
+    max-width: 80vw;
+    min-width: 70vw;
+  }
+
+  .all_books {
+    /* outline: 4px solid rgba(38, 255, 0, 0.886); */
+    width: 70vw;
+    box-sizing: border-box;
+  }
 
   .bigscreen-top {
     right: 3%;
