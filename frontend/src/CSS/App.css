@@ -41,7 +41,9 @@ html {
 }
 
 .results-content {
-  margin-top: 30vh;
+  margin-top: 250px;
+  max-width: 90vw;
+  background-color: salmon;
 }
 
 /*to separate searchbar from books*/
@@ -55,27 +57,28 @@ html {
   background-color: aquamarine;
 }
 
-.book-carusel {
-  /* margin-top: 20vh; */
-}
-
-
 .book-results-wrap {
   outline: 4px solid red;
   width: 90vw;
-  height: 90vh;
+  max-height: 500px;
 
   padding: 10px;
+  margin-bottom: 10px;
   box-sizing: border-box;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 .filtered-books {
+  outline: 4px solid rgb(0, 42, 255);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 100px;
+  max-height: 400px;
+
+
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  max-height: calc(200px * 5 + 20px * 4);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  /* max-height: calc(200px * 5 + 20px * 4); */
   gap: 20px;
 }
 
@@ -131,25 +134,22 @@ html {
     align-items: center;
 
     max-width: 80vw;
-    margin-left: 10vw;
+    margin-left: 150px;
   }
 
-  .page-content {
+  /* .page-content {
     max-width: 80vw;
+  } */
+
+  .results-content {
+    margin-top: 200px;
+    max-width: 70vw;
+    /* background-color: salmon; */
   }
 
   .book-results-wrap {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .resultspage-wrap {
-    margin-left: 10vw;
-    margin-top: 10vh;
-    max-width: 80vw;
-  }
-
-  .results-area {
-    max-width: 70vw;
+    /* outline: 4px solid red; */
+    width: 70vw;
   }
 
   .all_books_wrap {
@@ -169,7 +169,7 @@ html {
   }
 
   .info-area {
-    margin-left: 5vw;
+    margin-left: 150px;
   }
 
   .book-results-wrap {
