@@ -10,12 +10,7 @@
     height: 15vh;
     gap: 1px;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    flex-direction: row;
-
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -29,52 +24,48 @@
     text-shadow: 2px 2px 5px rgb(255, 255, 255);
 }
 
-.home-logo {
-    background-color: black;
-    color: white;
-    height: 100%;
-    width: 40%;
-    text-align: center;
-}
-
 .menu-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
 
-    width: 100%;
-    height: 100%;
     background-color: rgb(255, 0, 153);
+    width: 100vw;
+    height: 15vh;
 }
 
 .small-btns {
-    display: flex;
-    flex-direction: row;
+    display: contents;
 
-    width: 100%;
-    height: 100%;
 }
 
-.faves-btn {
+#home-logo {
+    order: 1;
+    background-color: black;
+    color: white;
+    height: 100%;
+    text-align: center;
+}
+
+#faves-btn {
+    order: 2;
     background-color: rgb(255, 182, 182);
     color: rgb(0, 0, 0);
     height: 100%;
-    width: 33.3%;
 }
 
-.user-btn {
+#user-btn {
+    order: 3;
     background-color: rgb(3, 157, 47);
     color: white;
     height: 100%;
-    width: 33.3%;
 }
 
-.settings-btn {
+#settings-btn {
+    order: 4;
     background-color: rgb(56, 56, 56);
     color: white;
     height: 100%;
-    width: 33.3%;
 }
 
 @media only screen and (min-width: 600px) {
@@ -87,40 +78,50 @@
         height: 100vh;
         gap: 20px;
 
+        display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
     }
 
     .menu-buttons {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: space-between;
+
+
         width: 100%;
+        height: 100%;
     }
 
     .small-btns {
+        box-sizing: border-box;
+        background-color: azure;
+        width: 100%;
+
+        display: flex;
         flex-direction: column;
-        justify-content: end;
         gap: 20px;
     }
 
-    .home-logo {
+    #home-logo {
+        order: 0;
         height: 30vh;
         width: 100%;
     }
 
-    .faves-btn {
-        max-height: 10vh;
+    #faves-btn {
+        min-height: 10vh;
         width: 100%;
     }
 
-    .user-btn {
-        max-height: 10vh;
+    #user-btn {
+        min-height: 10vh;
         width: 100%;
     }
 
-    .settings-btn {
-        max-height: 10vh;
+    #settings-btn {
+        min-height: 10vh;
         width: 100%;
         margin-bottom: 50px;
     }

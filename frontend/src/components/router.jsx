@@ -1,5 +1,5 @@
 import {Routes, Route } from "react-router";
-// import Home from "./home";
+import '../CSS/App.css'
 import MainPage from "../pages/mainPage";
 import UserPage from "../pages/UserPage";
 import SettingsPage from "../pages/settingsPage";
@@ -12,11 +12,11 @@ import ResultsPage from "../pages/resultsPage";
 export const AppRoutes = () => {
     return(
         <Routes>
-            <Route path="/" element={<MainPage/>} />
+            <Route path="/" element={<div className="page-content"><MainPage /></div>} />
             <Route path="/user" element={<UserPage/>}/>
             {/* <Route path="/favorites" element={<FavePage />} />*/}
             <Route path="/settings" element={<SettingsPage />} />
-            <Route path="/filter/:key/:value" element={<ResultsPage/>} />
+            <Route path="/filter/:key/:value" element={<div className="results-content"><ResultsPage /></div>} />
         </Routes>
     )
 }
