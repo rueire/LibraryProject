@@ -1,19 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
   server: {
     proxy: {
-      '/books': 'http://localhost:8000',
-      '/genres': 'http://localhost:8000'
-    }
+      "/books": "http://localhost:8000",
+      "/genres": "http://localhost:8000",
+      "/authors": "http://localhost:8000",
+    },
   },
   plugins: [
     react({
       babel: {
-        plugins: [['babel-plugin-react-compiler']],
+        plugins: [["babel-plugin-react-compiler"]],
       },
     }),
   ],
-})
+});

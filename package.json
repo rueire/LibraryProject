@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start:backend": "cd backend && ..\\library_venv\\Scripts\\python.exe -m uvicorn conn:app --reload --port 8000",
+    "start:backend": "cd backend && library_venv\\Scripts\\python.exe -m uvicorn conn:app --reload --port 8000",
     "start:frontend": "cd frontend && npm run dev",
     "dev:all": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
   },
