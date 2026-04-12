@@ -1,58 +1,87 @@
 import { useEffect, useState } from "react";
-import useFetchGenre from "../components/useFetchGenres";
+import useFetchGenre from "../hooks/useFetchGenres";
+import useFetchAuthors from "../hooks/useFetchAuthors";
+import useFetchBooks from "../hooks/useFetchBooks";
+import BookRow from "../components/bookRow";
 import { useNavigate } from "react-router";
-// import FilterBooks from "../components/filtering";
-import useFetchBooks from "../components/useFetchBooks";
 
 export default function MainPage() {
+  const [randomGenre, setRandomGenre] = useState("");
+  const [randomAuthor, setRandomAuthor] = useState("");
 
-    const [randomGenre, setRandomGenre] = useState("");
-    const genres = useFetchGenre();
-    const books = useFetchBooks();
-    const navigate = useNavigate();
-    
-    //randomized genre, useeffect to only render once
-    useEffect(() => {
-        // Do not refresh randomgenre 
-        if (randomGenre !== "") return;
+  const genres = useFetchGenre();
+  const books = useFetchBooks();
+  const authors = useFetchAuthors();
+  const navigate = useNavigate();
 
-        if (genres.length > 0) {
-            const idx = Math.floor(Math.random() * genres.length)
-            setRandomGenre(genres[idx].genre)
-        }
-    }, [genres, randomGenre]);
+  function handleNav() {
+    // right now navigation works with randomized genre
+    // TODO: handle so that uses params instead?
+    navigate(`/filter/genre/${randomGenre}`);
+  }
 
-    function handleNav() {
-        navigate(`/filter/genre/${randomGenre}`);
-    };
+  // UseEffects
+  //randomized genre, useeffect to only render once
+  useEffect(() => {
+    console.log("genres: ", genres);
 
+    // Do not refresh randomgenre
+    if (randomGenre !== "") return;
 
-    // filter through books, split genres by comma, trim
-    const filteredBooks = (books.filter(book => {
-        const booksbygenre = book.genres.split(",").map(g => g.trim());
+    if (genres.length > 0) {
+      const idx = Math.floor(Math.random() * genres.length);
+      setRandomGenre(genres[idx].genre);
+    }
+  }, [genres, randomGenre]);
 
-        // return books that include randomized genre
-        return booksbygenre.includes(randomGenre);
-    }));
+  useEffect(() => {
+    console.log("authors: ", authors);
 
-    return (
-        <div className="book-carusel">
-            <div className="genre-label-container" onClick={handleNav}>
-                <h3>{randomGenre || 'Loading...'}</h3>
-            </div>
-            <div className="all_books">
-                 {filteredBooks.length > 0 ? (
-                     filteredBooks.map((book) => (
-                         <div className="book_card" key={book.ISBN}>
-                             <h3>{book.title}</h3>
-                             <p>{book.author_name}</p>
-                             <p>{book.release_year}</p>
-                         </div>
-                     ))
-                 ) : (
-                     <p>No Books with this genre</p>
-                 )}
-             </div>
-        </div>
-    )
+    // Do not refresh randomgenre
+    if (randomAuthor !== "") return;
+
+    if (authors.length > 0) {
+      const idx = Math.floor(Math.random() * authors.length);
+      setRandomAuthor(authors[idx].name);
+    }
+  }, [authors, randomAuthor]);
+  //==========================================================
+  // filtering
+  // TODO: move this to backend
+  const booksByGenre = books.filter((book) => {
+    const booksbygenre = book.genres.split(",").map((g) => g.trim());
+    return booksbygenre.includes(randomGenre);
+  });
+
+  const booksByAuthor = books.filter((book) => {
+    return book.author === randomAuthor;
+  });
+
+  return (
+    <>
+      <div className="book-carusel">
+        <BookRow
+          classWrapper={"all_books"}
+          innerClass={"book_card"}
+          onClick={handleNav}
+          arr={booksByGenre}
+          title={randomGenre}
+          fallbackText={"No Books by this genre"}
+        />
+      </div>
+
+      <div style={{ margin: 100 }} />
+
+      <div className="book-carusel">
+        <BookRow
+          classWrapper={"all_books"}
+          innerClass={"book_card"}
+          onClick={handleNav}
+          arr={booksByAuthor}
+          title={randomAuthor}
+          fallbackText={"No Books by this author"}
+        />
+      </div>
+    </>
+  );
 }

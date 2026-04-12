@@ -46,16 +46,13 @@ html {
   background-color: salmon;
 }
 
-/*to separate searchbar from books*/
 .page-content {
-  margin-top: 20vh;
-  display: block;
-  max-width: 90vw;
+  /* margin-top: 20vh; */
+  width: 100vw;
   min-width: 80vw;
-  padding: 10px;
 
   box-sizing: border-box;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 /*===== big screen down =====*/
@@ -162,6 +159,8 @@ html {
     /* outline: 4px solid rgba(38, 255, 0, 0.886); */
     width: 60vw;
     box-sizing: border-box;
+    background-color: rgb(229, 229, 236);
+    border: 2px solid black;
   }
 
   /* .book-carusel {
