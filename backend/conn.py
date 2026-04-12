@@ -38,18 +38,36 @@ app = FastAPI()
 # )
 
 try:
+    print(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
     engine = create_engine(
         f"mysql+mysqldb://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}",
         echo=False #True shows sql queries
         )
+    
+#======================================
+    @app.get('/authors')
+    def get_authors(
+        id:str | None=Query(None),
+        author:str | None=Query(None)
+    ):
+        query = """
+        SELECT id, name
+        FROM author
+        GROUP BY id
+        """
+        with engine.connect() as conn:
+            result = conn.execute(text(query))
+            authors = [dict(row._mapping) for row in result]
+        return {"authors":  authors}
 #======================================
     @app.get('/genres')
     def get_genres(
-        genre:str| None=Query(None)
+        id:str | None=Query(None),
+       genre:str| None=Query(None)
     ):
         
         query = """
-        SELECT genre
+        SELECT id, genre
         FROM genres
         GROUP BY id
         """
@@ -70,7 +88,7 @@ try:
         genre:str | None=Query(None)
     ):
         query = """
-        SELECT b.title, b.ISBN, b.language_code, a.name AS author_name, b.release_year, GROUP_CONCAT(DISTINCT g.genre ORDER BY g.genre SEPARATOR ', ') AS genres
+        SELECT b.id, b.title, b.ISBN, b.language_code, a.name AS author, b.release_year, GROUP_CONCAT(DISTINCT g.genre ORDER BY g.genre SEPARATOR ', ') AS genres
         FROM book b 
         INNER JOIN author a ON b.author_id = a.id 
         INNER JOIN book_genres bg ON bg.book_id = b.id
