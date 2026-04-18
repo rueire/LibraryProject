@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import FilterBooks from "../components/filtering";
+import FilterBooks from "../components/FilterBooks";
 
 
 export default function ResultsPage() {

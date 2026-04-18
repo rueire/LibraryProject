@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useFetchGenre from "../hooks/useFetchGenres";
 import useFetchAuthors from "../hooks/useFetchAuthors";
 import useFetchBooks from "../hooks/useFetchBooks";
-import BookRow from "../components/bookRow";
+import BookRow from "../components/BookRow";
 import { useNavigate } from "react-router";
 
 export default function MainPage() {
@@ -69,7 +69,6 @@ export default function MainPage() {
           fallbackText={"No Books by this genre"}
         />
       </div>
-
       <div style={{ margin: 100 }} />
 
       <div className="book-carusel">
