@@ -2,9 +2,9 @@ import './CSS/App.css'
 import './CSS/menu.css'
 import './CSS/searchbar.css'
 import { BrowserRouter } from 'react-router'
-import { AppRoutes } from './components/AppRoutes.jsx'
-import Menu from './components/Menu.jsx'
-import Searchbar from './components/Searchbar.jsx'
+import { AppRoutes } from './navigation/AppRoutes.jsx'
+import Menu from './components/layout/Menu.jsx'
+import Searchbar from './components/layout/Searchbar.jsx'
 
 function App() {
 
