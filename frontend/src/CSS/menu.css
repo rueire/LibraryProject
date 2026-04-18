@@ -2,71 +2,70 @@
 /*Colors are ugly so that i know what im doing*/
 
 .menu {
-    background-color: red;
-    overflow: hidden;
-    right: 0;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
 
-    width: 100%;
-    height: 15vh;
-    gap: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  width: 100%;
+  height: 10vh;
+
+  background-color: red;
+}
+
+.menuButtons {
+  background-color: rgb(255, 0, 153);
+  width: 9100vw;
+  height: 9vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.menuButtons > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#homeLogo {
+  background-color: black;
+  text-align: center;
+  width: 25%;
+}
+
+#faves-btn {
+    background-color: rgb(255, 182, 182);
+    height: 100%;
+      width: 25%;
+}
+
+#user-btn {
+    background-color: rgb(3, 157, 47);
+    height: 100%;
+      width: 25%;
+}
+
+#settings-btn {
+    background-color: rgb(56, 56, 56);
+    height: 100%;
+    width: 25%;
 }
 
 .menu-buttons a {
     color: hotpink;
 }
-
+/* 
 .menu-buttons a:hover {
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 5px rgb(255, 255, 255);
-}
-
-.menu-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-
-    background-color: rgb(255, 0, 153);
-    width: 100vw;
-    height: 15vh;
-}
-
-.small-btns {
-    display: contents;
-
-}
-
-#home-logo {
-    order: 1;
-    background-color: black;
-    color: white;
-    height: 100%;
-    text-align: center;
-}
-
-#faves-btn {
-    order: 2;
-    background-color: rgb(255, 182, 182);
-    color: rgb(0, 0, 0);
-    height: 100%;
-}
-
-#user-btn {
-    order: 3;
-    background-color: rgb(3, 157, 47);
-    color: white;
-    height: 100%;
-}
-
-#settings-btn {
-    order: 4;
-    background-color: rgb(56, 56, 56);
-    color: white;
-    height: 100%;
-}
+} */
 
 @media only screen and (min-width: 600px) {
     .menu {
@@ -125,4 +124,4 @@
         width: 100%;
         margin-bottom: 50px;
     }
-}
+} */
