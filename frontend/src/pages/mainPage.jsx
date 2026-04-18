@@ -4,6 +4,8 @@ import useFetchAuthors from "../hooks/useFetchAuthors";
 import useFetchBooks from "../hooks/useFetchBooks";
 import BookRow from "../components/BookRow";
 import { useNavigate } from "react-router";
+// import Searchbar from "../components/layout/Searchbar.jsx";
+import styles from "./mainPage.module.css";
 
 export default function MainPage() {
   const [randomGenre, setRandomGenre] = useState("");
@@ -59,10 +61,11 @@ export default function MainPage() {
 
   return (
     <>
-      <div className="book-carusel">
+      {/* <Searchbar /> */}
+      <div>
         <BookRow
-          classWrapper={"all_books"}
-          innerClass={"book_card"}
+          classWrapper={styles.allBooks}
+          innerClass={styles.bookCard}
           onClick={handleNav}
           arr={booksByGenre}
           title={randomGenre}
@@ -71,10 +74,10 @@ export default function MainPage() {
       </div>
       <div style={{ margin: 100 }} />
 
-      <div className="book-carusel">
+      <div>
         <BookRow
-          classWrapper={"all_books"}
-          innerClass={"book_card"}
+          classWrapper={styles.allBooks}
+          innerClass={styles.bookCard}
           onClick={handleNav}
           arr={booksByAuthor}
           title={randomAuthor}

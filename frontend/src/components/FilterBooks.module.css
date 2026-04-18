@@ -1,0 +1,26 @@
+.bookResultsWrapper {
+  outline: 4px solid red;
+  width: 90vw;
+  max-height: 500px;
+
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+/* 
+.filteredBooks {
+  outline: 4px solid rgb(0, 42, 255);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100px;
+  max-height: 400px;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+} */

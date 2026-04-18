@@ -1,25 +1,18 @@
-import './CSS/App.css'
-import './CSS/menu.css'
-import './CSS/searchbar.css'
-import { BrowserRouter } from 'react-router'
-import { AppRoutes } from './navigation/AppRoutes.jsx'
-import Menu from './components/layout/Menu.jsx'
-import Searchbar from './components/layout/Searchbar.jsx'
+import "./CSS/App.css";
+import "./CSS/menu.css";
+import { BrowserRouter } from "react-router";
+import { AppRoutes } from "./navigation/AppRoutes.jsx";
+import Menu from "./components/layout/Menu.jsx";
 
 function App() {
-
   return (
-
     <BrowserRouter>
-      <div className='info-area'>
-      <Menu />
-      <div className='search-area'>
-        <Searchbar />
-      </div>
-          <AppRoutes />
+      <div className="main">
+        <Menu />
+        <AppRoutes />
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

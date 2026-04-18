@@ -1,0 +1,28 @@
+.allBooks {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  background-color: aqua;
+  height: 25vh;
+  width: 80vw;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+/*book card with book info*/
+.bookCard {
+  font-size: small;
+  text-align: start;
+  color: black;
+
+  background-color: rgb(238, 46, 142);
+  flex: 0 0 auto;
+  /* estää kutistumisen */
+  height: 140px;
+  width: 100px;
+}

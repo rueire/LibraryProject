@@ -1,4 +1,5 @@
 import useFetchBooks from "../hooks/useFetchBooks";
+import styles from "./FilterBooks.module.css";
 
 export default function FilterBooks({ genre }) {
   const books = useFetchBooks();
@@ -9,12 +10,15 @@ export default function FilterBooks({ genre }) {
     return booksbygenre.includes(genre);
   });
 
+  //Edit this to take any title!
+  // Or start using BookRow.jsx for this
+
   return (
-    <div className="book-results-wrap">
+    <div className={styles.bookResultsWrapper}>
       <div className="genre-label-container">
         <h3>{genre || "Loading..."}</h3>
       </div>
-      <div className="filtered-books">
+      <div>
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
             <div className="book_card" key={book.ISBN}>

@@ -1,0 +1,13 @@
+.resultsPageContent {
+  margin-top: 200px;
+  max-width: 90vw;
+  background-color: salmon;
+}
+
+.mainPageContent {
+  width: 100vw;
+  min-width: 80vw;
+
+  box-sizing: border-box;
+  /* background-color: aquamarine; */
+}
