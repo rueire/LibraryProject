@@ -41,87 +41,23 @@
 }
 
 #faves-btn {
-    background-color: rgb(255, 182, 182);
-    height: 100%;
-      width: 25%;
+  background-color: rgb(255, 182, 182);
+  height: 100%;
+  width: 25%;
 }
 
 #user-btn {
-    background-color: rgb(3, 157, 47);
-    height: 100%;
-      width: 25%;
+  background-color: rgb(3, 157, 47);
+  height: 100%;
+  width: 25%;
 }
 
 #settings-btn {
-    background-color: rgb(56, 56, 56);
-    height: 100%;
-    width: 25%;
+  background-color: rgb(56, 56, 56);
+  height: 100%;
+  width: 25%;
 }
 
 .menu-buttons a {
-    color: hotpink;
+  color: hotpink;
 }
-/* 
-.menu-buttons a:hover {
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 5px rgb(255, 255, 255);
-} */
-
-@media only screen and (min-width: 600px) {
-    .menu {
-        position: fixed;
-        left: 0;
-        overflow: hidden;
-
-        width: 150px;
-        height: 100vh;
-        gap: 20px;
-
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .menu-buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-
-        width: 100%;
-        height: 100%;
-    }
-
-    .small-btns {
-        box-sizing: border-box;
-        background-color: azure;
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    #home-logo {
-        order: 0;
-        height: 30vh;
-        width: 100%;
-    }
-
-    #faves-btn {
-        min-height: 10vh;
-        width: 100%;
-    }
-
-    #user-btn {
-        min-height: 10vh;
-        width: 100%;
-    }
-
-    #settings-btn {
-        min-height: 10vh;
-        width: 100%;
-        margin-bottom: 50px;
-    }
-} */

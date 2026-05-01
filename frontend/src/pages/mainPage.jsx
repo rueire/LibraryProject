@@ -3,7 +3,7 @@ import useFetchGenre from "../hooks/useFetchGenres";
 import useFetchAuthors from "../hooks/useFetchAuthors";
 import useFetchBooks from "../hooks/useFetchBooks";
 import BookRow from "../components/BookRow";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 // import Searchbar from "../components/layout/Searchbar.jsx";
 import styles from "./mainPage.module.css";
 
@@ -62,27 +62,30 @@ export default function MainPage() {
   return (
     <>
       {/* <Searchbar /> */}
-      <div>
-        <BookRow
-          classWrapper={styles.allBooks}
-          innerClass={styles.bookCard}
-          onClick={handleNav}
-          arr={booksByGenre}
-          title={randomGenre}
-          fallbackText={"No Books by this genre"}
-        />
-      </div>
-      <div style={{ margin: 100 }} />
+      <div className={styles.container}>
+        <div className={styles.bookRowWrapper}>
+          <BookRow
+            onClickTitle={handleNav}
+            onClickBook={(book) =>
+              navigate(`/book/${book.ISBN}`, { state: book })
+            }
+            arr={booksByGenre}
+            title={randomGenre}
+            fallbackText={"No Books by this genre"}
+          />
+        </div>
 
-      <div>
-        <BookRow
-          classWrapper={styles.allBooks}
-          innerClass={styles.bookCard}
-          onClick={handleNav}
-          arr={booksByAuthor}
-          title={randomAuthor}
-          fallbackText={"No Books by this author"}
-        />
+        <div className={styles.bookRowWrapper}>
+          <BookRow
+            onClickTitle={handleNav}
+            onClickBook={(book) =>
+              navigate(`/book/${book.ISBN}`, { state: book })
+            }
+            arr={booksByAuthor}
+            title={randomAuthor}
+            fallbackText={"No Books by this author"}
+          />
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,36 @@
+.rowContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.allBooks {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  background-color: rgba(113, 255, 255, 0.686);
+  height: 20vh;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  width: 80vw;
+  margin: 0 auto;
+}
+
+/*book card with book info*/
+.bookCard {
+  font-size: small;
+  text-align: start;
+  color: black;
+  overflow-wrap: break-word;
+
+  background-color: rgb(238, 46, 142);
+  flex: 0 0 auto;
+  /* estää kutistumisen */
+  height: 140px;
+  width: 100px;
+}

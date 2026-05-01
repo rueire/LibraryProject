@@ -7,7 +7,7 @@ import Menu from "./components/layout/Menu.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <div className="main">
+      <div className="app">
         <Menu />
         <AppRoutes />
       </div>
